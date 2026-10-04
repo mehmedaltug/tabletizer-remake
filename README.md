@@ -9,7 +9,7 @@ This new Tabletizer project is a desktop and mobile remake of the original Table
 ## Features
 
 - **Desktop host for Windows, macOS, and Linux** — uses host's IP address as a code and accepts a mobile connection over WebSockets.
-- **Mobile remote for Android and iOS** — connect by entering the desktop's "code" (IP address).
+- **Mobile remote for Android** — connect by entering the desktop's "code" (IP address).
 - **Touch-to-mouse controls** — tap to click, drag to move the pointer, and use dedicated left and right click controls.
 - **Mouse-button holds** — toggle either mouse button down and release it when needed.
 - **Connection controls and status** — see the connection state, disconnect a device, or disable incoming connections from the desktop.
@@ -61,13 +61,11 @@ npm install
 npm run start
 ```
 
-Use the Expo development tooling to open the app on an Android or iOS device.
+Use the Expo development tooling to open the app on an Android device.
 
 ## Build artifacts
 
 The workflows in `.github/workflows/` can be started manually, run for relevant pushes and pull requests, and run when a GitHub release is published. Release builds are attached to that release:
 
 - **Desktop:** Windows, macOS, and Linux executables.
-- **Mobile:** Android release APK and an unsigned iOS Simulator app.
-
-The iOS artifact is for the simulator and is not a signed App Store build.
+- **Mobile:** Android release APK.
