@@ -1,0 +1,41 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tabletizer Desktop</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="connect-page">
+            <header class="connect-heading">
+                <div class="brand-mark" aria-hidden="true">
+                    <div class="brand-mark-inner"></div>
+                </div>
+                <p class="eyebrow">Tabletizer Desktop</p>
+                <h1 class="connect-title">Connect your tablet</h1>
+                <p class="connect-description">Enter this connection code in the mobile app to get started.</p>
+            </header>
+
+            <section class="connection-card" aria-labelledby="code-label">
+                <p class="field-label" id="code-label">YOUR CONNECTION CODE</p>
+                <div class="code-panel" aria-label="Connection code">
+                    <p id="text-0" class="ip-box"></p>
+                    <p id="text-1" class="ip-box"></p>
+                    <p id="text-2" class="ip-box"></p>
+                    <p id="text-3" class="ip-box"></p>
+                </div>
+                <p class="info-text">Use this code in the mobile app to connect.</p>
+                <p class="info-text" id="connected-info" aria-live="polite"></p>
+
+                <div class="connection-actions">
+                    <label class="no-select system-button" id="checkbox-label">
+                        <input type="checkbox" id="enabled-checkbox" onchange="ChangeAllowance()" checked />
+                        Enable Tabletizer
+                    </label>
+                    <button class="system-button" onclick="Disconnect()" id="button">Disconnect device</button>
+                </div>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
