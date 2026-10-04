@@ -50,7 +50,7 @@ python main.py
 
 The desktop app displays the address to enter in the mobile app. Both devices need to be on the same network.
 
-To package the desktop app on Windows, run `build.sh` in a Bash environment with Python and the required system dependencies installed. The GitHub Actions workflow builds native executables for Windows, macOS, and Linux.
+The GitHub Actions workflow builds native executables for Windows, macOS, and Linux. To package the desktop app manually, run `build.sh` in a Bash environment with Python and the required system dependencies installed. 
 
 ### Mobile
 
