@@ -1,14 +1,6 @@
 name: Build desktop
 
 on:
-  push:
-    paths:
-      - "tabletizer-desktop/**"
-      - ".github/workflows/desktop-build.yml"
-  pull_request:
-    paths:
-      - "tabletizer-desktop/**"
-      - ".github/workflows/desktop-build.yml"
   release:
     types: [published]
   workflow_dispatch:
@@ -25,13 +17,13 @@ jobs:
         include:
           - os: ubuntu-latest
             artifact: tabletizer-linux
-            output: dist/tabletizer
+            output: dist/tabletizer-linux
           - os: macos-latest
             artifact: tabletizer-macos
-            output: dist/tabletizer
+            output: dist/tabletizer-macos
           - os: windows-latest
             artifact: tabletizer-windows
-            output: dist/tabletizer.exe
+            output: dist/tabletizer-windows.exe
 
     defaults:
       run:
@@ -61,13 +53,13 @@ jobs:
         if: runner.os == 'Windows'
         run: >-
           python -m PyInstaller --noconfirm --clean --onefile --windowed
-          --name tabletizer --icon logo_final.ico --add-data "web;web" main.py
+          --name ${{ matrix.artifact }} --icon logo_final.ico --add-data "web;web" main.py
 
       - name: Build on macOS and Linux
         if: runner.os != 'Windows'
         run: >-
           python -m PyInstaller --noconfirm --clean --onefile --windowed
-          --name tabletizer --add-data "web:web" main.py
+          --name ${{ matrix.artifact }} --add-data "web:web" main.py
 
       - name: Upload desktop build
         uses: actions/upload-artifact@v4
