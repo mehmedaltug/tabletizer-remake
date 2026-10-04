@@ -1,14 +1,6 @@
 name: Build mobile
 
 on:
-  push:
-    paths:
-      - "tabletizer-mobile/**"
-      - ".github/workflows/mobile-build.yml"
-  pull_request:
-    paths:
-      - "tabletizer-mobile/**"
-      - ".github/workflows/mobile-build.yml"
   release:
     types: [published]
   workflow_dispatch:
@@ -38,9 +30,6 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
 
       - name: Install JavaScript dependencies
         run: npm ci
